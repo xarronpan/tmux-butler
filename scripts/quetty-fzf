@@ -70,6 +70,8 @@ keymap['alt-n']='num'
 keymap['alt-p']='path'
 keymap['alt-i']='ip'
 keymap['alt-l']='line'
+keymap['alt-c']='cmdline'
+keymap['alt-s']='quote'
 header="--header="
 bindings="--bind="
 firstmap=true

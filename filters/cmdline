@@ -15,7 +15,9 @@ source $SCRIPTDIR/.butlerrc-defaults
 # OR all the prompt regexes
 defaultBashPrompt1='\[.*\]\$'
 defaultBashPrompt2='\[.*\]#'
-regexlist=( $defaultBashPrompt1 $defaultBashPrompt2 )
+defaultBashPrompt3='[^ ]+\$'
+defaultBashPrompt4='>'
+regexlist=( $defaultBashPrompt1 $defaultBashPrompt2 $defaultBashPrompt3 $defaultBashPrompt4 )
 # custom prompt
 if [[ -n "$CUSTOMPROMPT" ]]
 then
