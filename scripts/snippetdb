@@ -32,9 +32,10 @@ list () {
         for f in $snippetdbstore/*
         do
                 # echo $(cat $f/key)	$(cat $f/value)
-                printf "%-20s" "$(cat $f/key)"
+                #printf "%-20s" "$(cat $f/key)"
+                printf "%s " "$(cat $f/key)"
                 echo $(cat $f/value)
-        done
+        done | column -t
 
 }
 
