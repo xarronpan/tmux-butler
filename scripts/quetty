@@ -166,7 +166,8 @@ cat > $inpfile
 # Read input to tmp file for reuse
 for reg in "${REGEXLIST[@]}"
 do
-        cat $inpfile | egrep -o $reg >> $tmpfile
+        #cat $inpfile | egrep -o $reg >> $tmpfile
+        cat $inpfile | ag -o $reg >> $tmpfile
 done
 for tkner in "${FILTERLIST[@]}"
 do
@@ -174,4 +175,5 @@ do
 done
 
 # Sort and uniq the output
-cat $tmpfile | egrep -o ".{$minchars,}" | sort | uniq | shuf
+#cat $tmpfile | egrep -o ".{$minchars,}" | sort | uniq | shuf
+cat $tmpfile | ag -o ".{$minchars,}" | sort | uniq | shuf
