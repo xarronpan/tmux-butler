@@ -91,4 +91,5 @@ then
         bindings+=",$FZFBINDING"
 fi
 
-cat $inpfile | $ROOTDIR/scripts/quetty -$startmode | fzf "$header" "$bindings"
+#cat $inpfile | $ROOTDIR/scripts/quetty -$startmode | fzf "$header" "$bindings"
+cat $inpfile | $ROOTDIR/scripts/quetty -word -ip -path -num -quote -nospace | fzf "$header" "$bindings"
