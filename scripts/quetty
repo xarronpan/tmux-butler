@@ -167,7 +167,8 @@ cat > $inpfile
 for reg in "${REGEXLIST[@]}"
 do
         #cat $inpfile | egrep -o $reg >> $tmpfile
-        cat $inpfile | ag -o $reg >> $tmpfile
+        #cat $inpfile | ag -o $reg >> $tmpfile
+        cat $inpfile | rg -o -e $reg >> $tmpfile
 done
 for tkner in "${FILTERLIST[@]}"
 do
@@ -176,4 +177,5 @@ done
 
 # Sort and uniq the output
 #cat $tmpfile | egrep -o ".{$minchars,}" | sort | uniq | shuf
-cat $tmpfile | ag -o ".{$minchars,}" | sort | uniq | shuf
+#cat $tmpfile | ag -o ".{$minchars,}" | sort | uniq | shuf
+cat $tmpfile | rg -o -e ".{$minchars,}" | sort | uniq | shuf
