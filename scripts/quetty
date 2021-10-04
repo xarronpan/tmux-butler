@@ -168,8 +168,9 @@ for reg in "${REGEXLIST[@]}"
 do
         #cat $inpfile | egrep -o $reg >> $tmpfile
         #cat $inpfile | ag -o $reg >> $tmpfile
-        cat $inpfile | rg -o -e $reg >> $tmpfile
+        (cat $inpfile | rg -o -e $reg >> $tmpfile)&
 done
+wait
 for tkner in "${FILTERLIST[@]}"
 do
         cat $inpfile | $tkner >> $tmpfile
